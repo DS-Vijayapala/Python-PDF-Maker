@@ -22,7 +22,11 @@ for index, row in df.iterrows(): # iterate through the rows of the csv file
 
     # add the line to the pdf body using the loop
     for Y in range(20 ,277 ,10):
-        pdf.line(x1=10, y1=Y, x2=200, y2=Y)
+#This for loop iterates over values of Y, starting from 20 and ending at 276 (since range() stops before the upper limit 277).
+#The third parameter 10 means increment Y by 10 in each loop iteration.
+#The generated sequence of Y value
+
+        pdf.line(x1=10, y1=Y, x2=200, y2=Y) 
 
     # set the footer of the pdf
 

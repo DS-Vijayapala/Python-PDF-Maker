@@ -18,7 +18,11 @@ for index, row in df.iterrows(): # iterate through the rows of the csv file
     pdf.set_font(family="Arial", size=24, style='B')
     pdf.set_text_color(100, 100, 100)
     pdf.cell(w=0, h=12, txt=row["Topic"], ln=1, align="L")
-    pdf.line(10, 21, 200, 21)
+    
+
+    # add the line to the pdf body using the loop
+    for Y in range(20 ,277 ,10):
+        pdf.line(x1=10, y1=Y, x2=200, y2=Y)
 
     # set the footer of the pdf
 
@@ -36,6 +40,10 @@ for index, row in df.iterrows(): # iterate through the rows of the csv file
         pdf.set_font(family="Times", size=10, style='I')
         pdf.set_text_color(180, 180, 180)
         pdf.cell(w=0, h=10, txt=row["Topic"], ln=1, align="R")
+
+        # add the line to the pdf body using the loop
+        for Y in range(20 ,277 ,10):
+            pdf.line(10, Y, 200, Y)
 
 
 pdf.output("Example.pdf")
